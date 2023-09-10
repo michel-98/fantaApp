@@ -5,15 +5,15 @@ import api_request
 import matches_helper
 import os
 
-main = Flask(__name__)
+app = Flask(__name__)
 load_dotenv()
 
-@main.route('/')
+@app.route('/')
 def index():
     return render_template('index.html')
 
 
-@main.route('/run', methods=['POST'])
+@app.route('/run', methods=['POST'])
 def run():
     email_address = os.getenv("email_address")
     mailPassword = os.getenv("mailPassword")
@@ -21,6 +21,8 @@ def run():
     sergio = os.getenv("sergio")
     antonello = os.getenv("antonello")
     fantaGoatPassword = os.getenv("fantaGoatPassword")
+
+    print("matchToken" + matchToken)
 
     boolean = matches_helper.getIfTimeIsRunningUp(matchToken)
     if boolean:
@@ -33,4 +35,4 @@ def run():
 
 
 if __name__ == "__main__":
-    main.run()
+    app.run()

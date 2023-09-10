@@ -2,3 +2,4 @@ flask~=2.3.3
 requests~=2.31.0
 html2text~=2020.1.16
 python-dotenv
+gunicorn
