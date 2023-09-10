@@ -30,4 +30,4 @@ def getIfTimeIsRunningUp(matchToken):
     # Calculate the difference in days
     days_difference = (date_object - current_date).days
     print("Days difference: " + str(days_difference))
-    return days_difference > 2
+    return days_difference < 2
